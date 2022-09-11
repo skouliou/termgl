@@ -21,14 +21,14 @@ void
 tgl_framebuffer_delete (struct tgl_framebuffer_s *fbuffer);
 
 void
-tgl_framebuffer_set(struct tgl_framebuffer_s *fbuffer, uint16_t x, uint16_t y,
+tgl_framebuffer_set (struct tgl_framebuffer_s *fbuffer, uint16_t x, uint16_t y,
                      struct tgl_rgb_s rgb_val);
 
 void
-tgl_framebuffer_draw(struct tgl_framebuffer_s *fbuffer);
+tgl_framebuffer_draw (struct tgl_framebuffer_s *fbuffer);
 
 void
-termgl_pxlbuffer_map(struct tgl_framebuffer_s * pxlbuffer, tgl_pxl_shader_f f);
+tgl_framebuffer_map (struct tgl_framebuffer_s * pxlbuffer, tgl_pxl_shader_f f);
 
 void
 tgl_line (struct tgl_framebuffer_s *pxlbuffer,

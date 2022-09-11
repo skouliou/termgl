@@ -70,13 +70,12 @@ tgl_framebuffer_draw(struct tgl_framebuffer_s *fbuffer)
     }
 }
 
-
 void
-termgl_pxlbuffer_map(struct tgl_framebuffer_s * pxlbuffer, tgl_pxl_shader_f f)
+tgl_framebuffer_map (struct tgl_framebuffer_s * fbuffer, tgl_pxl_shader_f f)
 {
     // todo: validate arguments
-    uint32_t pxl_count = pxlbuffer->hight * pxlbuffer->width;
-    struct tgl_rgb_s *first = pxlbuffer->buffer,
+    uint32_t pxl_count = fbuffer->hight * fbuffer->width;
+    struct tgl_rgb_s *first = fbuffer->buffer,
                       *last = first + pxl_count;
     while (first != last)
     {
@@ -86,7 +85,7 @@ termgl_pxlbuffer_map(struct tgl_framebuffer_s * pxlbuffer, tgl_pxl_shader_f f)
 }
 
 void
-tgl_line (struct tgl_framebuffer_s *pxlbuffer,
+tgl_line (struct tgl_framebuffer_s *fbuffer,
              int x0, int y0, int x1, int y1, struct tgl_rgb_s color)
 {
     int x, y;
@@ -94,6 +93,6 @@ tgl_line (struct tgl_framebuffer_s *pxlbuffer,
     {
         x = x0 + (x1 - x0) * t;
         y = y0 + (y1 - y0) * t;
-        tgl_framebuffer_set(pxlbuffer, x, y, color);
+        tgl_framebuffer_set(fbuffer, x, y, color);
     }
 }
